@@ -23,7 +23,7 @@ namespace BoardGameApp.API.Controllers
             _config = config;
             _repo = repo;
         }
-
+        
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
         {
