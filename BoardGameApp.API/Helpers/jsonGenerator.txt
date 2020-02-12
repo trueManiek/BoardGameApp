@@ -1,0 +1,25 @@
+[
+  '{{repeat(7)}}',
+  {
+    Name: '{{company()}}',
+    AddedDate: '{{date(new Date(2017,0,1), new Date(2020, 12, 02), "YYYY-MM-dd")}}',
+    AllRentalCount: '{{integer(0,100)}}',
+    Code: '{{guid()}}',
+    Complexity: '{{random("bardzo łatwa", "łatwa", "średnia", "trudna", "bardzo trudna")}}',
+    CurrentEventRentalCount: '{{integer(0,30)}}',
+    Genre: '{{random("strategiczna", "logiczna", "zręcznościowa", "przygodowa", "karciana")}}',
+    LastRental: '{{date(new Date(2019,0,1), new Date(2019, 12 ,12), "YYYY-MM-dd")}}',
+    MaxPlayTime: '{{integer(60,240)}}',
+    MaxPlayers: '{{integer(2,6)}}',
+    MinAge: '{{integer(4,14)}}',
+    MinPlayTime: '{{integer(15,60)}}',
+    MinPlayers: '{{integer(1,2)}}',
+    NumberOfCopies: '1',
+    ReleaseDate: '{{date(new Date(1998, 0, 1), new Date(2019, 12, 02), "YYYY-MM-dd")}}',
+    Image: [
+      {
+        url: 'https://picsum.photos/200' + '.jpg'
+      }
+      ]
+  }
+ ]
