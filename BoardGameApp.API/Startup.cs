@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using BoardGameApp.API.Data;
 using BoardGameApp.API.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -35,11 +36,12 @@ namespace BoardGameApp.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddControllers().AddNewtonsoftJson(opt => {
-
-                opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            services.AddControllers().AddNewtonsoftJson(options => 
+            {
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
             services.AddCors();
+            services.AddAutoMapper(typeof(GameRepository).Assembly);
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IGameRepository, GameRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

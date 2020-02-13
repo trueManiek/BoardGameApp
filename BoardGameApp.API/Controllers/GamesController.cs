@@ -1,5 +1,8 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using BoardGameApp.API.Data;
+using BoardGameApp.API.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,9 +14,11 @@ namespace BoardGameApp.API.Controllers
     public class GamesController : ControllerBase
     {
         private readonly IGameRepository _repo;
+        private readonly IMapper _mapper;
 
-        public GamesController(IGameRepository repo)
+        public GamesController(IGameRepository repo, IMapper mapper)
         {
+            _mapper = mapper;
             _repo = repo;
         }
 
@@ -21,14 +26,18 @@ namespace BoardGameApp.API.Controllers
         public async Task<IActionResult> GetGames()
         {
             var games = await _repo.GetGames();
-            return Ok(games);
+            var gamesToReturn = _mapper.Map<IEnumerable<GameForListDto>>(games);
+            
+            return Ok(gamesToReturn);
         }
-        
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetGame(int id)
         {
             var game = await _repo.GetGame(id);
-            return Ok(game);
+            var gameToReturn = _mapper.Map<GameForDetailedDto>(game);
+
+            return Ok(gameToReturn);
         }
     }
 }
