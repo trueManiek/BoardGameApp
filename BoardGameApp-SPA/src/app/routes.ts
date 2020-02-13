@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { GameListComponent } from './game-list/game-list.component';
+import { GameListComponent } from './games/game-list/game-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AuthGuard } from './_guards/auth.guard';
