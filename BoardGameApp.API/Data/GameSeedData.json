@@ -1,6 +1,6 @@
 [
     {
-      "Name": "Lingoage",
+      "Title": "7 cudów",
       "AddedDate": "2018-12-18",
       "AllRentalCount": 88,
       "Code": "2395fdbb-5939-4584-bb53-2e70e20dd905",
@@ -16,11 +16,11 @@
       "NumberOfCopies": 1,
       "ReleaseDate": "2005-02-02",
       "Image":{
-          "Url": "https://picsum.photos/200.jpg"
+          "Url": "https://cf.geekdo-images.com/itemrep/img/fR5_q-7pMDmhLP8SPLOwPcUeLVo=/fit-in/246x300/pic860217.jpg"
         }
     },
     {
-      "Name": "Zenthall",
+      "Title": "Gloomhaven",
       "AddedDate": "2019-09-29",
       "AllRentalCount": 67,
       "Code": "d2249688-a7fe-4fe6-922c-228d40e27c6e",
@@ -36,11 +36,11 @@
       "NumberOfCopies": 1,
       "ReleaseDate": "1999-08-24",
       "Image":{
-          "Url": "https://picsum.photos/200.jpg"
+          "Url": "https://cf.geekdo-images.com/itemrep/img/P7MVqNuhAl8Y4fxiM6e74kMX6e0=/fit-in/246x300/pic2437871.jpg"
         }
     },
     {
-      "Name": "Zedalis",
+      "Title": "Dragonfire",
       "AddedDate": "2018-04-09",
       "AllRentalCount": 37,
       "Code": "263439eb-9218-4cc5-a172-d15698a4a393",
@@ -56,11 +56,11 @@
       "NumberOfCopies": 1,
       "ReleaseDate": "2007-04-19",
       "Image":{
-        "Url": "https://picsum.photos/200.jpg"
+        "Url": "https://cf.geekdo-images.com/itemrep/img/oMZI22VhR1V5h2xih6u49TTh6gg=/fit-in/246x300/pic4022104.jpg"
       }
     },
     {
-      "Name": "Stelaecor",
+      "Title": "Na skrzydłach",
       "AddedDate": "2017-08-02",
       "AllRentalCount": 100,
       "Code": "58d997ed-9018-42d5-8ba9-e9f45a0486eb",
@@ -76,11 +76,11 @@
       "NumberOfCopies": 1,
       "ReleaseDate": "1999-02-16",
       "Image":{
-        "Url": "https://picsum.photos/200.jpg"
+        "Url": "https://cf.geekdo-images.com/itemrep/img/vb971Kg92dzMd1TM3RBJtQm-XCU=/fit-in/246x300/pic4458123.jpg"
       }
     },
     {
-      "Name": "Cujo",
+      "Title": "Terraformacja Marsa",
       "AddedDate": "2019-06-21",
       "AllRentalCount": 49,
       "Code": "b304f905-01dd-4f3b-951e-7657d0d6b4f8",
@@ -96,11 +96,11 @@
       "NumberOfCopies": 1,
       "ReleaseDate": "2018-07-30",
       "Image":{
-        "Url": "https://picsum.photos/200.jpg"
+        "Url": "https://cf.geekdo-images.com/itemrep/img/bhemoxL7PG1a_79L0D9syPTADSY=/fit-in/246x300/pic3536616.jpg"
       }
     },
     {
-      "Name": "Zillanet",
+      "Title": "Avalon",
       "AddedDate": "2017-08-13",
       "AllRentalCount": 17,
       "Code": "4ea56a51-6362-472e-ae7f-8071a91d7769",
@@ -116,11 +116,11 @@
       "NumberOfCopies": 1,
       "ReleaseDate": "2018-02-24",
       "Image":{
-        "Url": "https://picsum.photos/200.jpg"
+        "Url": "https://cf.geekdo-images.com/itemrep/img/yottt6aVvGBSOp3D0k4dno5_n3Y=/fit-in/246x300/pic1398895.jpg"
       }
     },
     {
-      "Name": "Jimbies",
+      "Title": "Pandemic",
       "AddedDate": "2020-11-18",
       "AllRentalCount": 40,
       "Code": "af5b1e30-9c15-4e4d-8ef4-62c118c36c12",
@@ -136,11 +136,11 @@
       "NumberOfCopies": 1,
       "ReleaseDate": "2013-12-30",
       "Image":{
-        "Url": "https://picsum.photos/200.jpg"
+        "Url": "https://cf.geekdo-images.com/itemrep/img/cTrAWasNHyKMcNs8Zrv5O7sKS6M=/fit-in/246x300/pic1534148.jpg"
       }
     },
     {
-      "Name": "Realmo",
+      "Title": "Vindication",
       "AddedDate": "2020-11-09",
       "AllRentalCount": 25,
       "Code": "9d20b4e5-02ac-40af-9e1f-289e9c400478",
@@ -156,11 +156,11 @@
       "NumberOfCopies": 1,
       "ReleaseDate": "2005-07-09",
       "Image":{
-        "Url": "https://picsum.photos/200.jpg"
+        "Url": "https://cf.geekdo-images.com/itemrep/img/wSpm75nqafWM5qNe1z7ax7wdgWQ=/fit-in/246x300/pic4101638.jpg"
       }
     },
     {
-      "Name": "Handshake",
+      "Title": "jednym słowem",
       "AddedDate": "2020-09-28",
       "AllRentalCount": 86,
       "Code": "4fa02f56-25f6-4604-b1b0-b3557a4660c2",
@@ -176,11 +176,11 @@
       "NumberOfCopies": 1,
       "ReleaseDate": "2018-03-04",
       "Image":{
-        "Url": "https://picsum.photos/200.jpg"
+        "Url": "https://cf.geekdo-images.com/itemrep/img/gOjxfHuppDqvdCPPX5M_oRdpA8o=/fit-in/246x300/pic4268499.jpg"
       }
     },
     {
-      "Name": "Ginkogene",
+      "Title": "Chinatown",
       "AddedDate": "2017-04-04",
       "AllRentalCount": 55,
       "Code": "1edf38ac-a774-4223-bf9d-3bb67b845f7c",
@@ -196,7 +196,7 @@
       "NumberOfCopies": 1,
       "ReleaseDate": "2007-06-06",
       "Image":{
-        "Url": "https://picsum.photos/200.jpg"
+        "Url": "https://cf.geekdo-images.com/itemrep/img/DByt4H6aIw3L9VWS0SdGxx9ppAM=/fit-in/246x300/pic2037509.png"
       }
     }
   ]

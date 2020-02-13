@@ -1,11 +1,40 @@
-<div class="card mb-2">
-  <div class="card-img-wrapper">
-    <img class="card-img-top" src="{{game.imageUrl}}" alt ="{{game.name}}">
+<!--
+<div class="card mb-6 mx-auto" style="max-width: 600px;">
+  <div class="row no-gutters">
+    <img class="card-img-left" src="{{game.imageUrl}}" alt ="{{game.title}}">
   </div>
-  <div class="card-body p1">
+  <div class="col-md-8">
+  <div class="card-body">
     <h6 class="card-title text-center mb-1"><i class="fa fa-user"></i>
-      {{game.name}}, {{game.complexity}}
+      {{game.title}},
     </h6>
     <p class="card-text text-muted text-center">{{game.genre}}</p>
   </div>
 </div>
+</div>
+-->
+<a class="custom-card">
+<div class="card mx-auto mb-2 border primary" style="width: 600px;">
+  <div>
+    <div class="row no-gutters">
+      <img src="{{game.imageUrl}}" class="card-img">
+      <div class="card-body p-3">
+          <div class="row no-gutters">
+            <h5 class="card-title text-dark mr-2">{{game.title | titlecase }}</h5>
+           <!-- <button class="btn btn-primary btn-sm mr-2">Rent</button>
+            <button class="btn btn-light btn-sm">Edit</button> -->
+          </div>
+          <div class="row no-gutters text-primary">
+            <span class="card-text mr-3"><i class="fa fa-cube"></i><small class="text-muted">  {{game.genre | titlecase}}</small></span>
+            <span class="card-text mr-3"><i class="fa fa-user"></i><small class="text-muted">  {{game.minPlayers}} -
+                {{game.maxPlayers}}</small></span>
+            <span class="card-text mr-3"><i class="fa fa-history"></i><small class="text-muted">  {{game.minPlayTime}} -
+                {{game.maxPlayTime}}</small></span>
+            <span class="card-text mr-3"><i class="fa fa-calendar"></i><small class="text-muted">  Od {{game.minAge}} lat</small></span>
+            <span class="card-text mr-3"><i class="fa fa-cogs"></i><small class="text-muted">  {{game.complexity}}</small></span>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</a>

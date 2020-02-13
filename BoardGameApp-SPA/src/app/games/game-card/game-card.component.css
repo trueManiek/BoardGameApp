@@ -1,0 +1,38 @@
+img {
+  width: 90px; /* You can set the dimensions to whatever you want */
+  height: 90px;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.05, 1.05);
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+  background-color:rgba(191, 224, 200, 0.3);
+}
+
+.card:hover .btn {
+  opacity: 1;
+  transition: all 0.9 ease-in-out;
+}
+
+.card {
+  transform: scale(1.0, 1.0);
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+.btn {
+  opacity: 0;
+  width: 100px;
+  max-height: 30px;
+  margin-top: -5px;
+
+}
+
+a.custom-card,
+a.custom-card:hover {
+  color: inherit;
+  font-style: inherit;
+  text-decoration: inherit;
+}

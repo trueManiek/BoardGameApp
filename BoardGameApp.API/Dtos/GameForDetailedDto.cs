@@ -5,7 +5,7 @@ namespace BoardGameApp.API.Dtos
     public class GameForDetailedDto
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Title { get; set; }
         public string Code { get; set; }
         public string Genre { get; set; }
         public int OnMarket { get; set; }

@@ -2,7 +2,7 @@ import { Image } from './image';
 
 export interface Game {
   id: number;
-  name: string;
+  title: string;
   genre: string;
   added: Date;
   lastRental: Date;
