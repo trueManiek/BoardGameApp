@@ -4,12 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Game } from '../_models/game';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    Authorization: 'Bearer ' + localStorage.getItem('token')
-  })
-}
-
 @Injectable({
   providedIn: 'root'
 })
@@ -19,11 +13,11 @@ export class GameService {
   constructor(private http: HttpClient) { }
 
   getGames(): Observable<Game[]> {
-    return this.http.get<Game[]>(this.baseUrl + 'games', httpOptions);
+    return this.http.get<Game[]>(this.baseUrl + 'games');
   }
 
   getGame(id): Observable<Game> {
-    return this.http.get<Game>(this.baseUrl + 'games/' + id, httpOptions);
+    return this.http.get<Game>(this.baseUrl + 'games/' + id);
   }
 
 }

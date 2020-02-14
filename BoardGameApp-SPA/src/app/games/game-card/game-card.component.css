@@ -1,34 +1,74 @@
 img {
-  width: 90px; /* You can set the dimensions to whatever you want */
-  height: 90px;
-  object-fit: cover;
+  height: 100px;
+  object-fit: contain;
+
+}
+
+h5 {
+  margin: 2px;
+}
+
+p {
+  font-size: 14px;
 }
 
 .card:hover {
-  transform: scale(1.05, 1.05);
-  transition-duration: 300ms;
-  transition-timing-function: ease-out;
-  background-color:rgba(191, 224, 200, 0.3);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.18), 0 10px 10px rgba(0,0,0,0.15);
 }
 
-.card:hover .btn {
+.card:hover .game-icons {
+  bottom: 0;
   opacity: 1;
-  transition: all 0.9 ease-in-out;
+}
+
+.card-text {
+  white-space: nowrap;
+  margin-right: 20px;
+  line-height: 15px;
 }
 
 .card {
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.10), 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.card-body {
+  margin: 0px;
+  padding-top: 5px;
+}
+
+.card:hover img {
+  transform: scale(1.05, 1.05);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  opacity: 0.8;
+
+}
+
+.card img {
   transform: scale(1.0, 1.0);
-  transition-duration: 300ms;
+  transition-duration: 500ms;
   transition-timing-function: ease-out;
 }
 
-.btn {
-  opacity: 0;
-  width: 100px;
-  max-height: 30px;
-  margin-top: -5px;
-
+.card-img-wrapper {
+  overflow: hidden;
 }
+
+.game-icons {
+  position: absolute;
+  bottom: -30%;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  opacity: 0;
+}
+
+.animate {
+  transition: all 0.3s ease-in-out;
+}
+
 
 a.custom-card,
 a.custom-card:hover {
