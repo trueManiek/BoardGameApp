@@ -17,6 +17,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { GameCardComponent } from './games/game-card/game-card.component';
+import { GameDetailComponent } from './games/game-detail/game-detail.component';
 
 
 export function tokenGetter() {
@@ -32,7 +33,8 @@ export function tokenGetter() {
       GameListComponent,
       UserListComponent,
       MessagesComponent,
-      GameCardComponent
+      GameCardComponent,
+      GameDetailComponent
    ],
    imports: [
       BrowserModule,

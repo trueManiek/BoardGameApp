@@ -4,7 +4,7 @@ export interface Game {
   id: number;
   title: string;
   genre: string;
-  added: Date;
+  addedDate: Date;
   lastRental: Date;
   allRental: number;
   eventRental: number;
