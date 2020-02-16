@@ -31,14 +31,14 @@
   </div>
   <div class="card-body">
     <h5 class="card-title text-center">{{game.title | titlecase}}</h5>
-    <p class="text-center text-muted"><i class="fa fa-cube"></i>&nbsp;{{game.genre | titlecase}}</p>
+    <ng-container *ngIf="isExpansion(); else exp"><p class="text-center expansionc text-info"><i class="fa fa-cubes"></i>&nbsp; Dodatek</p></ng-container>
+    <ng-template #exp><p class="text-center normal text-secondary"><i class="fa fa-cube"></i>&nbsp; Podstawka</p></ng-template>
     <div class="text-muted">
     <span class="card-text"><i class="fa fa-user"></i>&nbsp;<small class="text-muted">{{game.minPlayers}} -
         {{game.maxPlayers}}</small></span>
     <span class="card-text"><i class="fa fa-history"></i>&nbsp;<small class="text-muted">{{game.minPlayTime}} -
         {{game.maxPlayTime}}</small></span>
     <span class="card-text"><i class="fa fa-calendar"></i>&nbsp;<small class="text-muted">Od {{game.minAge}} lat</small></span>
-    <span class="card-text"><i class="fa fa-cogs"></i>&nbsp;<small class="text-muted">{{game.complexity}}</small></span>
     </div>
   </div>
 </div>

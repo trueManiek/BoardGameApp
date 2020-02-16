@@ -15,15 +15,17 @@ export class GameDetailComponent implements OnInit {
   constructor(private gameService: GameService, private alertify: AlertifyService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.loadGame();
-  }
-
-  loadGame() {
-    this.gameService.getGame(this.route.snapshot.params['id']).subscribe((game: Game) => {
-      this.game = game;
-    }, error => {
-      this.alertify.error(error);
+    this.route.data.subscribe(data => {
+      this.game = data.game;
     });
   }
+
+  // loadGame() {
+  //   this.gameService.getGame(this.route.snapshot.params['id']).subscribe((game: Game) => {
+  //     this.game = game;
+  //   }, error => {
+  //     this.alertify.error(error);
+  //   });
+  // }
 
 }

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BoardGameApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200212202542_ExtendedGameClass")]
-    partial class ExtendedGameClass
+    [Migration("20200215210848_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,19 +30,13 @@ namespace BoardGameApp.API.Migrations
                     b.Property<int>("AllRentalCount")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Code")
+                    b.Property<string>("Author")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Complexity")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("CurrentEventRentalCount")
+                    b.Property<int>("BaseGameId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Genre")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("LastRental")
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("MaxPlayTime")
@@ -60,13 +54,10 @@ namespace BoardGameApp.API.Migrations
                     b.Property<int>("MinPlayers")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name")
+                    b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("NumberOfCopies")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("ReleaseDate")
+                    b.Property<string>("Title")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -74,24 +65,64 @@ namespace BoardGameApp.API.Migrations
                     b.ToTable("Games");
                 });
 
-            modelBuilder.Entity("BoardGameApp.API.Models.Image", b =>
+            modelBuilder.Entity("BoardGameApp.API.Models.GameCopy", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("Barrowed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Code")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("GameId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Url")
+                    b.Property<string>("Language")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Publisher")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GameId")
-                        .IsUnique();
+                    b.HasIndex("GameId");
 
-                    b.ToTable("Images");
+                    b.ToTable("GameCopies");
+                });
+
+            modelBuilder.Entity("BoardGameApp.API.Models.GameGenre", b =>
+                {
+                    b.Property<int>("GameId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("GenreId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("GameId", "GenreId");
+
+                    b.HasIndex("GenreId");
+
+                    b.ToTable("GameGenres");
+                });
+
+            modelBuilder.Entity("BoardGameApp.API.Models.Genre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("GenreName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Genres");
                 });
 
             modelBuilder.Entity("BoardGameApp.API.Models.User", b =>
@@ -114,25 +145,26 @@ namespace BoardGameApp.API.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("BoardGameApp.API.Models.Value", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Values");
-                });
-
-            modelBuilder.Entity("BoardGameApp.API.Models.Image", b =>
+            modelBuilder.Entity("BoardGameApp.API.Models.GameCopy", b =>
                 {
                     b.HasOne("BoardGameApp.API.Models.Game", "Game")
-                        .WithOne("GameImage")
-                        .HasForeignKey("BoardGameApp.API.Models.Image", "GameId")
+                        .WithMany("GameCopies")
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BoardGameApp.API.Models.GameGenre", b =>
+                {
+                    b.HasOne("BoardGameApp.API.Models.Game", "Game")
+                        .WithMany("GameGenres")
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BoardGameApp.API.Models.Genre", "Genre")
+                        .WithMany("GameGenres")
+                        .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

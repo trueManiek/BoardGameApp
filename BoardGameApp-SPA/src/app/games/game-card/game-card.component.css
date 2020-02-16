@@ -12,12 +12,13 @@ p {
   font-size: 14px;
 }
 
+
 .card:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.18), 0 10px 10px rgba(0,0,0,0.15);
 }
 
 .card:hover .game-icons {
-  bottom: 0;
+  top: 30px;
   opacity: 1;
 }
 
@@ -57,7 +58,7 @@ p {
 
 .game-icons {
   position: absolute;
-  bottom: -30%;
+  top: 30%;
   left: 0;
   right: 0;
   margin-right: auto;

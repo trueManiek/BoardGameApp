@@ -14,4 +14,8 @@ export class GameCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  isExpansion(): boolean {
+    return this.game.baseGameId !== 0;
+  }
+
 }

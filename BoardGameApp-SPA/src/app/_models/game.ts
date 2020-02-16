@@ -1,20 +1,19 @@
-import { Image } from './image';
+import { Genre } from './genre';
+import { GameGenre } from './gameGenre';
 
 export interface Game {
   id: number;
   title: string;
-  genre: string;
+  releaseDate: Date;
   addedDate: Date;
-  lastRental: Date;
-  allRental: number;
-  eventRental: number;
+  allRentalCount: number;
   minPlayers: number;
   maxPlayers: number;
   minPlayTime: number;
   maxPlayTime: number;
   minAge: number;
-  onMarket: number;
   imageUrl: string;
-  complexity?: string;
-  image?: Image;
+  author: string;
+  baseGameId: number;
+  gameGenres: GameGenre[];
 }

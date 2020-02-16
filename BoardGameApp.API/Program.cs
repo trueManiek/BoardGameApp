@@ -21,7 +21,9 @@ namespace BoardGameApp.API
                 {
                     var context = services.GetRequiredService<DataContext>();
                     context.Database.Migrate();
+                    Seed.SeedGenres(context);
                     Seed.SeedGames(context);
+                    Seed.SeedGameGenres(context);
                     Seed.SeedUsers(context);
                 }
                 catch (Exception ex)

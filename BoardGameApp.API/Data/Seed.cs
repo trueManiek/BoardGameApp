@@ -11,10 +11,10 @@ namespace BoardGameApp.API.Data
         {
             if (!context.Games.Any())
             {
-                var gamesData = System.IO.File.ReadAllText("Data/GameSeedData.json");
+                var gamesData = System.IO.File.ReadAllText("Data/Seeds/GameSeedData.json");
                 var games = JsonConvert.DeserializeObject<List<Game>>(gamesData);
 
-                foreach(var game in games)
+                foreach (var game in games)
                 {
                     context.Games.Add(game);
                 }
@@ -23,16 +23,55 @@ namespace BoardGameApp.API.Data
             }
         }
 
+        public static void SeedGenres(DataContext context)
+        {
+            if (!context.Genres.Any())
+            {
+                var genreData = System.IO.File.ReadAllText("Data/Seeds/GenreSeedData.json");
+                var genres = JsonConvert.DeserializeObject<List<Genre>>(genreData);
+
+                foreach (var genre in genres)
+                {
+                    context.Genres.Add(genre);
+                }
+
+                context.SaveChanges();
+            }
+        }
+
+        public static void SeedGameGenres(DataContext context)
+        {
+            if (!context.GameGenres.Any())
+            {
+                var genreData = System.IO.File.ReadAllText("Data/Seeds/GameGenreSeedData.json");
+                var genres = JsonConvert.DeserializeObject<List<GameGenre>>(genreData);
+
+                foreach (var genre in genres)
+                {
+                    var genreInDb = context.GameGenres.Where(
+                        w => w.Game.Id == genre.GameId &&
+                             w.Genre.Id == genre.GenreId).SingleOrDefault();
+
+                    if (genreInDb == null)
+                    {
+                        context.GameGenres.Add(genre);
+                    }
+                }
+
+                context.SaveChanges();
+            }
+        }
+
         public static void SeedUsers(DataContext context)
         {
-            if(!context.Users.Any())
+            if (!context.Users.Any())
             {
-                var usersData = System.IO.File.ReadAllText("Data/UserSeedData.json");
+                var usersData = System.IO.File.ReadAllText("Data/Seeds/UserSeedData.json");
                 var users = JsonConvert.DeserializeObject<List<User>>(usersData);
 
-                foreach(var user in users)
+                foreach (var user in users)
                 {
-                    
+
                     //creating passwords (not used for games)
                     byte[] passHash, passSalt;
                     CreatePasswordHash("password", out passHash, out passSalt);

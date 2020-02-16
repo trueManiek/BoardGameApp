@@ -37,7 +37,7 @@ namespace BoardGameApp.API.Controllers
             var game = await _repo.GetGame(id);
             var gameToReturn = _mapper.Map<GameForDetailedDto>(game);
 
-            return Ok(gameToReturn);
+            return Ok(game);
         }
     }
 }

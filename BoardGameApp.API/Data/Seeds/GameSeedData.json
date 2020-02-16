@@ -1,0 +1,192 @@
+[
+  {
+    "Title": "7 cudów",
+    "ReleaseDate": "2001-08-19",
+    "AddedDate": "2019-04-26",
+    "AllRentalCount": 7,
+    "MinPlayers": 2,
+    "MaxPlayers": 3,
+    "MinPlayTime": 32,
+    "MaxPlayTime": 69,
+    "MinAge": 6,
+    "ImageUrl": "https://cf.geekdo-images.com/itemrep/img/fR5_q-7pMDmhLP8SPLOwPcUeLVo=/fit-in/246x300/pic860217.jpg",
+    "Author": "Macdonald Noble",
+    "GameCopies": [
+      {
+        "Comment": "Super gra",
+        "Publisher": "Wydawca Publisher",
+        "Language": "polski",
+        "Barrowed": 0,
+        "Code": "047439365"
+      },
+      {
+        "Comment": "Super gra",
+        "Publisher": "Wydawca Publisher",
+        "Language": "polski",
+        "Barrowed": 1,
+        "Code": "047439365"
+      },
+      {
+        "Comment": "Super gra",
+        "Publisher": "English Publisher",
+        "Language": "angielski",
+        "Barrowed": 0,
+        "Code": "047439365"
+      }
+    ]
+  },
+  {
+    "Title": "Gloomhaven",
+    "ReleaseDate": "1998-11-28",
+    "AddedDate": "2019-04-30",
+    "AllRentalCount": 48,
+    "MinPlayers": 1,
+    "MaxPlayers": 5,
+    "MinPlayTime": 49,
+    "MaxPlayTime": 204,
+    "MinAge": 12,
+    "ImageUrl": "https://cf.geekdo-images.com/itemrep/img/P7MVqNuhAl8Y4fxiM6e74kMX6e0=/fit-in/246x300/pic2437871.jpg",
+    "Author": "Lawrence Tyson",
+    "GameCopies": [
+      {
+        "Comment": "Super gra",
+        "Publisher": "Wydawca Publisher",
+        "Language": "polski",
+        "Barrowed": 0,
+        "Code": "047439365"
+      }
+    ]
+  },
+  {
+    "Title": "Dragonfire",
+    "ReleaseDate": "1999-11-30",
+    "AddedDate": "2018-01-19",
+    "AllRentalCount": 21,
+    "MinPlayers": 1,
+    "MaxPlayers": 2,
+    "MinPlayTime": 55,
+    "MaxPlayTime": 161,
+    "MinAge": 8,
+    "ImageUrl": "https://cf.geekdo-images.com/itemrep/img/oMZI22VhR1V5h2xih6u49TTh6gg=/fit-in/246x300/pic4022104.jpg",
+    "Author": "Blankenship Ayala"
+  },
+  {
+    "Title": "Na skrzydłach",
+    "ReleaseDate": "2011-04-02",
+    "AddedDate": "2019-11-07",
+    "AllRentalCount": 99,
+    "MinPlayers": 1,
+    "MaxPlayers": 2,
+    "MinPlayTime": 31,
+    "MaxPlayTime": 94,
+    "MinAge": 4,
+    "ImageUrl": "https://cf.geekdo-images.com/itemrep/img/vb971Kg92dzMd1TM3RBJtQm-XCU=/fit-in/246x300/pic4458123.jpg",
+    "Author": "Vinson Holmes"
+  },
+  {
+    "Title": "Terraformacja Marsa",
+    "ReleaseDate": "2004-02-25",
+    "AddedDate": "2017-10-28",
+    "AllRentalCount": 67,
+    "MinPlayers": 2,
+    "MaxPlayers": 6,
+    "MinPlayTime": 48,
+    "MaxPlayTime": 124,
+    "MinAge": 5,
+    "ImageUrl": "https://cf.geekdo-images.com/itemrep/img/bhemoxL7PG1a_79L0D9syPTADSY=/fit-in/246x300/pic3536616.jpg",
+    "Author": "Milagros Richmond"
+  },
+  {
+    "Title": "Avalon",
+    "ReleaseDate": "2014-10-23",
+    "AddedDate": "2020-07-11",
+    "AllRentalCount": 54,
+    "MinPlayers": 1,
+    "MaxPlayers": 2,
+    "MinPlayTime": 39,
+    "MaxPlayTime": 215,
+    "MinAge": 10,
+    "ImageUrl": "https://cf.geekdo-images.com/itemrep/img/yottt6aVvGBSOp3D0k4dno5_n3Y=/fit-in/246x300/pic1398895.jpg",
+    "Author": "Holly Cummings"
+  },
+  {
+    "Title": "Pandemic",
+    "ReleaseDate": "2000-05-25",
+    "AddedDate": "2020-02-19",
+    "AllRentalCount": 36,
+    "MinPlayers": 1,
+    "MaxPlayers": 3,
+    "MinPlayTime": 29,
+    "MaxPlayTime": 76,
+    "MinAge": 5,
+    "ImageUrl": "https://cf.geekdo-images.com/itemrep/img/cTrAWasNHyKMcNs8Zrv5O7sKS6M=/fit-in/246x300/pic1534148.jpg",
+    "Author": "Preston Webster"
+  },
+  {
+    "Title": "Vindication",
+    "ReleaseDate": "2006-07-01",
+    "AddedDate": "2018-10-15",
+    "AllRentalCount": 53,
+    "MinPlayers": 2,
+    "MaxPlayers": 2,
+    "MinPlayTime": 28,
+    "MaxPlayTime": 80,
+    "MinAge": 10,
+    "ImageUrl": "https://cf.geekdo-images.com/itemrep/img/wSpm75nqafWM5qNe1z7ax7wdgWQ=/fit-in/246x300/pic4101638.jpg",
+    "Author": "Jaime Taylor"
+  },
+  {
+    "Title": "jednym słowem",
+    "ReleaseDate": "1998-10-23",
+    "AddedDate": "2019-06-16",
+    "AllRentalCount": 32,
+    "MinPlayers": 2,
+    "MaxPlayers": 5,
+    "MinPlayTime": 27,
+    "MaxPlayTime": 70,
+    "MinAge": 12,
+    "ImageUrl": "https://cf.geekdo-images.com/itemrep/img/gOjxfHuppDqvdCPPX5M_oRdpA8o=/fit-in/246x300/pic4268499.jpg",
+    "Author": "Berry Hawkins"
+  },
+  {
+    "Title": "Battlestar Galactics: The Board Game",
+    "ReleaseDate": "2014-07-18",
+    "AddedDate": "2020-04-21",
+    "AllRentalCount": 99,
+    "MinPlayers": 1,
+    "MaxPlayers": 3,
+    "MinPlayTime": 53,
+    "MaxPlayTime": 178,
+    "MinAge": 13,
+    "ImageUrl": "https://cf.geekdo-images.com/itemrep/img/CzmKWyU1qu6M7bVGiW2T9Vo6c_w=/fit-in/246x300/pic354500.jpg",
+    "Author": "Mayra Morrison"
+  },
+  {
+    "Title": "7 cudów Liderzy",
+    "ReleaseDate": "2014-07-18",
+    "AddedDate": "2020-04-21",
+    "AllRentalCount": 99,
+    "MinPlayers": 1,
+    "MaxPlayers": 3,
+    "MinPlayTime": 53,
+    "MaxPlayTime": 178,
+    "MinAge": 13,
+    "ImageUrl": "https://cf.geekdo-images.com/itemrep/img/G7hzLpaU0qwvDMpsKv40k4bIiwY=/fit-in/246x300/pic1046319.jpg",
+    "Author": "Mayra Morrison",
+    "BaseGameId": 1
+  },
+  {
+    "Title": "Terraformacja Marsa: Wenus",
+    "ReleaseDate": "2004-02-25",
+    "AddedDate": "2017-10-28",
+    "AllRentalCount": 67,
+    "MinPlayers": 2,
+    "MaxPlayers": 6,
+    "MinPlayTime": 48,
+    "MaxPlayTime": 124,
+    "MinAge": 5,
+    "ImageUrl": "https://cf.geekdo-images.com/itemrep/img/FCYkWeXcoIjwqOWYSEbRR_9u0-M=/fit-in/246x300/pic3767139.jpg",
+    "Author": "Milagros Richmond",
+    "BaseGameId": 5
+  }
+]

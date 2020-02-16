@@ -5,10 +5,6 @@
         <img class="card-img-top img-thumbnail" src="{{game.imageUrl}}" alt="{{game.title}}">
         <div class="card-body">
           <div>
-            <strong>Gatunek:</strong>
-            <p>{{game.genre}}</p>
-          </div>
-          <div>
             <strong>Liczba Graczy:</strong>
           <p>{{game.minPlayers}} - {{game.maxPlayers}}</p>
           </div>
@@ -21,24 +17,41 @@
             <p>{{game.minAge}}</p>
           </div>
           <div>
-            <strong>Poziom trudności:</strong>
-            <p>{{game.complexity}}</p>
-          </div>
-          <div>
             <strong>Data dodania:</strong>
             <p>{{game.addedDate}}</p>
           </div>
         </div>
         <div class="card-footer">
           <div class="btn-group d-flex">
-          <button class="btn btn-primary w-100">Button 1</button>
+          <button class="btn btn-primary w-100" [routerLink]="['/game/edit']" >Edytuj</button>
           <button class="btn btn-success w-100">Button 2</button>
           </div>
         </div>
       </div>
     </div>
     <div class="col-sm-8">
+      <div class="tab-panel">
+        <tabset class="game-tabset">
+          <tab heading="O grze">
 
+              <div *ngFor="let genre of game.gameGenres">
+                <span class="badge badge-pill badge-light">{{genre.genre.genreName}}</span>
+                </div>
+
+          </tab>
+          <tab heading="Tab2">
+            <div class="jumbotron">
+              <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+              <hr class="my-4">
+              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+              <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+              </p>
+            </div>
+          </tab>
+          <tab heading="tab3"></tab>
+        </tabset>
+      </div>
     </div>
   </div>
 </div>
