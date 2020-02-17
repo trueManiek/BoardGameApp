@@ -1,55 +1,102 @@
-<div class="containet mt-4">
+<div class="container mt-4">
   <div class="row">
-    <div class="col-sm-4">
-      <div class="card">
-        <img class="card-img-top img-thumbnail" src="{{game.imageUrl}}" alt="{{game.title}}">
+    <div class="col-sm-3">
+      <div class="card sheet">
+        <div class="card-title">
+          <h4>{{game.title | titlecase}}</h4>
+        </div>
+        <img class="card-img-top game" src="{{game.imageUrl}}" alt="{{game.title}}">
         <div class="card-body">
-          <div>
-            <strong>Liczba Graczy:</strong>
-          <p>{{game.minPlayers}} - {{game.maxPlayers}}</p>
-          </div>
-          <div>
-            <strong>Czas gry:</strong>
-            <p>{{game.minPlayTime}} - {{game.maxPlayTime}}</p>
-          </div>
-          <div>
-            <strong>Od lat:</strong>
-            <p>{{game.minAge}}</p>
-          </div>
-          <div>
-            <strong>Data dodania:</strong>
-            <p>{{game.addedDate}}</p>
+          <div class="card-footer">
+            <button class="btn btn-success w-100" [routerLink]="['/game/edit']"><strong>Wypożycz</strong></button><br />
           </div>
         </div>
-        <div class="card-footer">
-          <div class="btn-group d-flex">
-          <button class="btn btn-primary w-100" [routerLink]="['/game/edit']" >Edytuj</button>
-          <button class="btn btn-success w-100">Button 2</button>
-          </div>
-        </div>
+
       </div>
     </div>
     <div class="col-sm-8">
-      <div class="tab-panel">
+      <div class="tab-panel sheet">
         <tabset class="game-tabset">
-          <tab heading="O grze">
-
-              <div *ngFor="let genre of game.gameGenres">
-                <span class="badge badge-pill badge-light">{{genre.genre.genreName}}</span>
+          <tab heading="O grze" class="game-inf">
+            <div>
+              <div class="row">
+                <button class="btn btn-secondary ml-3 edit-btn" [routerLink]="['/game/edit']">Edytuj</button><br />
+                <div class="mr-5">
+                <div class="container info-card">
+                  <div class="row">
+                    <i class="fa fa-users fa-2x text-primary mr-2"></i>
+                    <div class="column">
+                      <p class="info">{{game.minPlayers}}-{{game.maxPlayers}}</p>
+                      <p class="info-desc text-secondary">Liczba graczy</p>
+                    </div>
+                  </div>
                 </div>
+                <div class="container info-card">
+                  <div class="row">
+                    <i class="fa fa-clock-o fa-2x text-primary mr-2"></i>
+                    <div class="column">
+                      <p class="info">{{game.minPlayTime}}-{{game.maxPlayTime}} min</p>
+                      <p class="info-desc text-secondary">Czas Gry</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="container info-card">
+                  <div class="row">
+                    <i class="fa fa-birthday-cake fa-2x text-primary mr-2"></i>
+                    <div class="column">
+                      <p class="info">{{game.minAge}}</p>
+                      <p class="info-desc text-secondary">Od lat</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="container info-card">
+                  <div class="row">
+                    <i class="fa fa-pencil fa-2x text-primary mr-2"></i>
+                    <div class="column">
+                      <p class="info add">{{game.author}}</p>
+                      <p class="info-desc text-secondary">Author</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="container info-card">
+                  <div class="row">
+                    <i class="fa fa-calendar fa-2x text-primary mr-2"></i>
+                    <div class="column">
+                      <p class="info">{{game.releaseDate | date:'yyyy'}}</p>
+                      <p class="info-desc text-secondary">Rok Wydawnia</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="container bgg-info">
+                    <img class="bgg bg-secondary mt-2" src="https://cf.geekdo-static.com/images/logos/navbar-logo-bgg-b2.svg" />
+                </div>
+              </div>
+              </div>
+              <div class="row p-2">
+                <div *ngFor="let genre of game.gameGenres" class="p-1">
+                  <span class="badge badge-pill badge-light">{{genre.genre.genreName}}</span>
+                </div>
+              </div>
+            </div>
+
 
           </tab>
-          <tab heading="Tab2">
+          <tab heading="Egzemplarze">
             <div class="jumbotron">
-              <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+              <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
+                to featured content or information.</p>
               <hr class="my-4">
-              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+              <p>It uses utility classes for typography and spacing to space content out within the larger container.
+              </p>
               <p class="lead">
                 <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
               </p>
             </div>
           </tab>
-          <tab heading="tab3"></tab>
+          <tab heading="Dodatki"></tab>
+          <tab heading="Statystyki"></tab>
         </tabset>
       </div>
     </div>
