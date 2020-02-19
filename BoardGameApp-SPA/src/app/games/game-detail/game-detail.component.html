@@ -22,57 +22,58 @@
               <div class="row">
                 <button class="btn btn-secondary ml-3 edit-btn" [routerLink]="['/game/edit']">Edytuj</button><br />
                 <div class="mr-5">
-                <div class="container info-card">
-                  <div class="row">
-                    <i class="fa fa-users fa-2x text-primary mr-2"></i>
-                    <div class="column">
-                      <p class="info">{{game.minPlayers}}-{{game.maxPlayers}}</p>
-                      <p class="info-desc text-secondary">Liczba graczy</p>
+                  <div class="container info-card">
+                    <div class="row">
+                      <i class="fa main fa-users fa-2x text-primary mr-2"></i>
+                      <div class="column">
+                        <p class="info">{{game.minPlayers}}-{{game.maxPlayers}}</p>
+                        <p class="info-desc text-secondary">Liczba graczy</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container info-card">
+                    <div class="row">
+                      <i class="fa main fa-clock-o fa-2x text-primary mr-2"></i>
+                      <div class="column">
+                        <p class="info">{{game.minPlayTime}}-{{game.maxPlayTime}} min</p>
+                        <p class="info-desc text-secondary">Czas Gry</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container info-card">
+                    <div class="row">
+                      <i class="fa main fa-birthday-cake fa-2x text-primary mr-2"></i>
+                      <div class="column">
+                        <p class="info">{{game.minAge}}</p>
+                        <p class="info-desc text-secondary">Od lat</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="container info-card">
-                  <div class="row">
-                    <i class="fa fa-clock-o fa-2x text-primary mr-2"></i>
-                    <div class="column">
-                      <p class="info">{{game.minPlayTime}}-{{game.maxPlayTime}} min</p>
-                      <p class="info-desc text-secondary">Czas Gry</p>
+                <div>
+                  <div class="container info-card">
+                    <div class="row">
+                      <i class="fa main fa-pencil fa-2x text-primary mr-2"></i>
+                      <div class="column">
+                        <p class="info add">{{game.author}}</p>
+                        <p class="info-desc text-secondary">Author</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="container info-card">
-                  <div class="row">
-                    <i class="fa fa-birthday-cake fa-2x text-primary mr-2"></i>
-                    <div class="column">
-                      <p class="info">{{game.minAge}}</p>
-                      <p class="info-desc text-secondary">Od lat</p>
+                  <div class="container info-card">
+                    <div class="row">
+                      <i class="fa main fa-calendar fa-2x text-primary mr-2"></i>
+                      <div class="column">
+                        <p class="info">{{game.releaseDate | date:'yyyy'}}</p>
+                        <p class="info-desc text-secondary">Rok Wydawnia</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div>
-                <div class="container info-card">
-                  <div class="row">
-                    <i class="fa fa-pencil fa-2x text-primary mr-2"></i>
-                    <div class="column">
-                      <p class="info add">{{game.author}}</p>
-                      <p class="info-desc text-secondary">Author</p>
-                    </div>
+                  <div class="container bgg-info">
+                    <img class="bgg bg-secondary mt-2"
+                      src="https://cf.geekdo-static.com/images/logos/navbar-logo-bgg-b2.svg" />
                   </div>
                 </div>
-                <div class="container info-card">
-                  <div class="row">
-                    <i class="fa fa-calendar fa-2x text-primary mr-2"></i>
-                    <div class="column">
-                      <p class="info">{{game.releaseDate | date:'yyyy'}}</p>
-                      <p class="info-desc text-secondary">Rok Wydawnia</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="container bgg-info">
-                    <img class="bgg bg-secondary mt-2" src="https://cf.geekdo-static.com/images/logos/navbar-logo-bgg-b2.svg" />
-                </div>
-              </div>
               </div>
               <div class="row p-2">
                 <div *ngFor="let genre of game.gameGenres" class="p-1">
@@ -80,20 +81,21 @@
                 </div>
               </div>
             </div>
-
-
           </tab>
           <tab heading="Egzemplarze">
-            <div class="jumbotron">
-              <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
-                to featured content or information.</p>
-              <hr class="my-4">
-              <p>It uses utility classes for typography and spacing to space content out within the larger container.
-              </p>
-              <p class="lead">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-              </p>
+            <ng-container *ngFor="let copy of orderedCopies()">
+            <div  class="card text-primary bg-light mb-3">
+            <div class="card-header h-copy"><h5>{{copy.code}}</h5></div>
+              <div class="pl-3">
+                <div class="row">
+                <div class="copy-info"><i class="fa fa-flag text-primary m-2"></i>Język: <strong>{{copy.language}}</strong></div>
+                  <div class="copy-info"><i class="fa fa-book text-primary m-2"></i>Wydawnictwo: <strong>{{copy.publisher}}</strong></div>
+                  <div *ngIf="isBarrowed(copy)" class="copy-info"><i class="fa fa-handshake-o text-warning m-2"></i>Pożyczona</div>
+                </div>
+                <div *ngIf="isValid(copy)" class="p-2">{{copy.comment}}</div>
+              </div>
             </div>
+          </ng-container>
           </tab>
           <tab heading="Dodatki"></tab>
           <tab heading="Statystyki"></tab>

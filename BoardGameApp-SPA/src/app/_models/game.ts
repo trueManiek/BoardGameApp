@@ -1,5 +1,5 @@
-import { Genre } from './genre';
 import { GameGenre } from './gameGenre';
+import { GameCopy } from './gameCopy';
 
 export interface Game {
   id: number;
@@ -15,5 +15,6 @@ export interface Game {
   imageUrl: string;
   author: string;
   baseGameId: number;
+  gameCopies: GameCopy[];
   gameGenres: GameGenre[];
 }

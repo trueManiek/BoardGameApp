@@ -3,6 +3,7 @@ import { Game } from 'src/app/_models/game';
 import { GameService } from 'src/app/_services/game.service';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { ActivatedRoute } from '@angular/router';
+import { GameCopy } from 'src/app/_models/gameCopy';
 
 @Component({
   selector: 'app-game-detail',
@@ -11,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GameDetailComponent implements OnInit {
   game: Game;
+  copies: GameCopy[];
 
   constructor(private gameService: GameService, private alertify: AlertifyService, private route: ActivatedRoute) { }
 
@@ -18,6 +20,28 @@ export class GameDetailComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.game = data.game;
     });
+  }
+
+  getCopies() {
+    const copies = [];
+    for (const copy of copies) {
+      copies.push(copy);
+    }
+    this.copies = copies;
+  }
+
+  orderedCopies() {
+    return this.game.gameCopies.sort(copy =>{
+      if (copy.barrowed) { return 1; } else { return -1; }
+    });
+  }
+
+  isValid(copy: GameCopy) {
+    return copy.comment !== null;
+  }
+
+  isBarrowed(copy: GameCopy) {
+    return copy.barrowed;
   }
 
   // loadGame() {

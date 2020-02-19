@@ -25,7 +25,7 @@ namespace BoardGameApp.API.Data
 
         public async Task<Game> GetGame(int id)
         {
-            var game = await _context.Games.Include(i => i.GameGenres).ThenInclude(t => t.Genre).FirstOrDefaultAsync(f => f.Id == id);
+            var game = await _context.Games.Include(c => c.GameCopies).Include(i => i.GameGenres).ThenInclude(t => t.Genre).FirstOrDefaultAsync(f => f.Id == id);
             return game;
         }
 
