@@ -1,4 +1,4 @@
-import { Component, OnInit, ResolvedReflectiveFactory } from '@angular/core';
+import { Component, OnInit, ResolvedReflectiveFactory, Input } from '@angular/core';
 import { Game } from 'src/app/_models/game';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -8,8 +8,6 @@ import { parseString } from 'xml2js';
 import { BggService } from 'src/app/_services/bgg.service';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { Boardgame, Name } from 'src/app/_models/boardgames';
-
-let xmlData = '';
 
 
 @Component({
@@ -24,6 +22,8 @@ export class GameEditComponent implements OnInit {
   bggUrl = 'http://www.boardgamegeek.com/xmlapi/boardgame/';
   bggGameLink = '';
   titleSelect = false;
+
+  @Input() maxlength: string | number;
 
   constructor(private route: ActivatedRoute, private alertify: AlertifyService, private httpClient: HttpClient) { }
 
@@ -72,8 +72,6 @@ export class GameEditComponent implements OnInit {
           this.loadedGame = result.boardgames.boardgame;
           this.savedGame = this.game;
 
-          console.log(this.loadedGame);
-
           this.game.maxPlayTime = this.loadedGame.maxplaytime;
           this.game.minPlayTime = this.loadedGame.minplaytime;
           this.game.minPlayers = this.loadedGame.minplayers;
@@ -82,17 +80,17 @@ export class GameEditComponent implements OnInit {
           this.game.imageUrl = this.loadedGame.thumbnail;
           this.game.author = this.loadedGame.boardgamedesigner._;
 
-          if (this.loadedGame.name.length > 1) {
+          if (Array.isArray(this.loadedGame.name)) {
             for (const name of this.loadedGame.name) {
               if (name.$.primary) {
                 this.game.title = name._;
               }
             }
+            this.titleSelect = true;
           } else {
             this.game.title = this.loadedGame.name._;
           }
 
-          this.titleSelect = true;
         }
       });
     });
