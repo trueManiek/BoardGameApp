@@ -13,12 +13,13 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { GameListComponent } from './games/game-list/game-list.component';
-import { UserListComponent } from './user-list/user-list.component';
+import { UserListComponent } from './users/user-list/user-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { GameCardComponent } from './games/game-card/game-card.component';
 import { GameDetailComponent } from './games/game-detail/game-detail.component';
 import { GameEditComponent } from './games/game-edit/game-edit.component';
+import { UserEditComponent } from './users/user-edit/user-edit.component';
 
 
 export function tokenGetter() {
@@ -33,10 +34,11 @@ export function tokenGetter() {
       RegisterComponent,
       GameListComponent,
       UserListComponent,
+      UserEditComponent,
       MessagesComponent,
       GameCardComponent,
       GameDetailComponent,
-      GameEditComponent
+      GameEditComponent,
    ],
    imports: [
       BrowserModule,

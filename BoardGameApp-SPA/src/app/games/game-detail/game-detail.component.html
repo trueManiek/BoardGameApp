@@ -1,14 +1,14 @@
 <div class="container mt-4">
+  <div class="card-title">
+    <h3>{{game.title | titlecase}}</h3>
+  </div>
   <div class="row">
     <div class="col-sm-3">
       <div class="card sheet">
-        <div class="card-title">
-          <h4>{{game.title | titlecase}}</h4>
-        </div>
-        <img class="card-img-top game" src="{{game.imageUrl}}" alt="{{game.title}}">
+        <img class="card-img-top game-img" src="{{game.imageUrl}}" alt="{{game.title}}">
         <div class="card-body">
           <div class="card-footer">
-            <button class="btn btn-success w-100" [routerLink]="['/game/edit']"><strong>Wypożycz</strong></button><br />
+            <button class="btn btn-success w-100" [routerLink]="['/game/edit/']"><strong>Wypożycz</strong></button><br />
           </div>
         </div>
 
@@ -20,7 +20,7 @@
           <tab heading="O grze" class="game-inf">
             <div>
               <div class="row">
-                <button class="btn btn-secondary ml-3 edit-btn" [routerLink]="['/game/edit']">Edytuj</button><br />
+                <button class="btn btn-secondary ml-3 edit-btn" [routerLink]="['/game/edit', game.id]">Edytuj</button><br />
                 <div class="mr-5">
                   <div class="container info-card">
                     <div class="row">

@@ -1,3 +1,100 @@
-<p>
-  game-edit works!
-</p>
+<div class="container mt-4">
+  <div class="card-title">
+    <h3>{{game.title | titlecase}}</h3>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="card sheet">
+        <img class="card-img-top game-img" src="{{game.imageUrl}}" alt="{{game.title}}">
+        <div class="card-body">
+          <div class="card-footer">
+            <button class="btn btn-success w-100" (click)="convertToJson()"><strong>TEST!</strong></button><br />
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="tab-panel sheet">
+        <tabset class="game-tabset">
+          <tab heading="O grze" class="game-inf">
+            <div>
+              <form>
+
+                <div class="form-group">
+                  <label class="col-form-label" for="inputDefault">Link do BGG:</label>
+                  <input type="text" class="form-control" placeholder="Link do bgg" name="bggGameLink"
+                    [(ngModel)]="bggGameLink">
+                  <label class="col-form-label" for="inputDefault">Link do obrazka:</label>
+                  <input type="text" class="form-control" placeholder="Link do obrazka" [(ngModel)]="game.imageUrl"
+                    name="imageUrl">
+                  <ng-container *ngIf="titleSelected()">
+                    <span class="mt-2">Wybierz tytuł</span>
+                    <div class="row ml-1">
+                      <div *ngFor="let title of loadedGame.name">
+                        <button class="btn btn-light btn-sm m-1" (click)="updateTitle(title._)">{{title._}}</button>
+                      </div>
+                    </div>
+                  </ng-container>
+
+                  <label class="col-form-label" for="inputDefault">Tytuł:</label>
+                  <input type="text" class="form-control" placeholder="Tytuł" [(ngModel)]="game.title" name="title">
+
+                  <div class="form-inline">
+
+                    <label class="col-form-label" for="inputDefault">Minimum graczy:</label>
+                    <input type="text" class="form-control" placeholder="Min graczy" [(ngModel)]="game.minPlayers"
+                      name="minPlayers">
+                    <label class="col-form-label" for="inputDefault">Maksimum graczy:</label>
+                    <input type="text" class="form-control" placeholder="Max graczy" [(ngModel)]="game.maxPlayers"
+                      name="maxPlayers">
+                    <label class="col-form-label" for="inputDefault">Minimalny czas gry:</label>
+                    <input type="text" class="form-control" placeholder="Min czas" [(ngModel)]="game.minPlayTime"
+                      name="minPlayTime">
+                    <label class="col-form-label" for="inputDefault">Maksymalny czas gry:</label>
+                    <input type="text" class="form-control" placeholder="Max czas" [(ngModel)]="game.maxPlayTime"
+                      name="maxPlayTime">
+                    <label class="col-form-label" for="inputDefault">Od lat:</label>
+                    <input type="text" class="form-control small-form" placeholder="Od lat" [(ngModel)]="game.minAge"
+                      name="minAge">
+                    <label class="col-form-label" for="inputDefault">Rok Wydania:</label>
+                    <input type="text" class="form-control small-form" placeholder="rok wydania"
+                      [(ngModel)]="game.releaseDate" name="releaseDate">
+                    <label class="col-form-label" for="inputDefault">Autor gry:</label>
+                    <input type="text" class="form-control" placeholder="Autor" [(ngModel)]="game.author" name="author">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="row p-2">
+              <div *ngFor="let genre of game.gameGenres" class="p-1">
+                <span class="badge badge-pill badge-light">{{genre.genre.genreName}}<button type="button"
+                    class="close text-primary ml-2" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button></span>
+              </div>
+            </div>
+
+          </tab>
+          <!--<tab heading="Egzemplarze">
+            <ng-container *ngFor="let copy of orderedCopies()">
+            <div  class="card text-primary bg-light mb-3">
+            <div class="card-header h-copy"><h5>{{copy.code}}</h5></div>
+              <div class="pl-3">
+                <div class="row">
+                <div class="copy-info"><i class="fa fa-flag text-primary m-2"></i>Język: <strong>{{copy.language}}</strong></div>
+                  <div class="copy-info"><i class="fa fa-book text-primary m-2"></i>Wydawnictwo: <strong>{{copy.publisher}}</strong></div>
+                  <div *ngIf="isBarrowed(copy)" class="copy-info"><i class="fa fa-handshake-o text-warning m-2"></i>Pożyczona</div>
+                </div>
+                <div *ngIf="isValid(copy)" class="p-2">{{copy.comment}}</div>
+              </div>
+            </div>
+          </ng-container>
+          </tab> -->
+          <tab heading="Dodatki"></tab>
+          <tab heading="Statystyki"></tab>
+        </tabset>
+      </div>
+    </div>
+  </div>
+</div>
